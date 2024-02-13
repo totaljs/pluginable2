@@ -1,0 +1,17 @@
+{
+	"name": "Pluginable2",
+	"version": "0.0.1",
+	"main": "index.js",
+	"dependencies": {
+		"total5": "beta"
+	},
+	"scripts": {
+		"start": "node index.js 8000"
+	},
+	"keywords": [
+		"pluginable",
+		"app"
+	],
+	"author": "Total.js",
+	"license": "MIT"
+}
