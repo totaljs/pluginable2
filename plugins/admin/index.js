@@ -1,7 +1,6 @@
 exports.icon = 'ti ti-key';
 exports.name = '@(Admin)';
 exports.position = 100;
-exports.visible = () => !CONF.op_reqtoken || !CONF.op_restoken;
 exports.import = 'extensions.html';
 exports.hidden = true;
 
@@ -118,3 +117,5 @@ if (!Storage.user) {
 		Storage.set('user', { id: 'admin', name: 'John Connor', login: login, password: password.sha256(salt), raw: password, sa: true, cookie: cookie, salt: salt });
 	})();
 }
+
+CONF.op_cookie = Storage.user.cookie;

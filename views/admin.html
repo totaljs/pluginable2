@@ -141,29 +141,6 @@
 			common.redirect(url);
 		};
 
-		// A simple integration for navigation
-		W.APP_INIT = function() {
-
-			common.ready = true;
-			APP.on('init', function() {
-
-				var ready = false;
-
-				ON('location', function(url) {
-					if (url === '/' && !ready)
-						ready = true;
-					else
-						APP.path(url);
-				});
-			});
-
-			APP.on('path', function(path) {
-				if (NAV.url !== path)
-					REDIRECT(path);
-			});
-
-		};
-
 		PLUGIN('common', function(exports) {
 
 			var model = exports.model;
