@@ -105,9 +105,11 @@ NEWACTION('Admin/logout', {
 });
 
 function login($) {
-	$.view('#admin/login');
+	if (CONF.op_reqtoken && CONF.op_restoken)
+		$.fallback(401);
+	else
+		$.view('#admin/login');
 }
-
 if (!Storage.user) {
 	(function() {
 		var login = U.random_text(10);
